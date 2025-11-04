@@ -24,7 +24,7 @@ public class OperationStrategyImpl implements OperationStrategy {
 
         OperationHandler handler = map.get(operation);
         if (handler == null) {
-            throw new RuntimeException("Operation " + operation + " not found");
+            throw new RuntimeException("Operation: " + operation + " not found");
         }
         return handler;
     }
