@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 public class TransactionParserImplTest {
 
     @Test
-    public void transactionParserImpl_lineIsNull_nok() {
+    public void parse_lineIsNull_nok() {
         TransactionParserImpl transactionParserImpl = new TransactionParserImpl();
         IllegalArgumentException exception =
                 Assertions.assertThrows(IllegalArgumentException.class,
@@ -17,7 +17,7 @@ public class TransactionParserImplTest {
     }
 
     @Test
-    public void transactionParserImpl_lineIsEmpty_nok() {
+    public void parse_lineIsEmpty_nok() {
         TransactionParserImpl transactionParserImpl = new TransactionParserImpl();
         IllegalArgumentException exception =
                 Assertions.assertThrows(IllegalArgumentException.class,
@@ -26,7 +26,7 @@ public class TransactionParserImplTest {
     }
 
     @Test
-    public void transactionParserImpl_invalidLineFormat_nok() {
+    public void parse_invalidLineFormat_nok() {
         String line = "b,apple";
         TransactionParserImpl transactionParserImpl = new TransactionParserImpl();
         RuntimeException exception =
@@ -36,7 +36,7 @@ public class TransactionParserImplTest {
     }
 
     @Test
-    public void transactionParserImpl_quantiyIsNegative_nok() {
+    public void parse_quantityIsNegative_nok() {
         TransactionParserImpl transactionParserImpl = new TransactionParserImpl();
         int quantity = -50;
         IllegalArgumentException exception =
@@ -46,7 +46,7 @@ public class TransactionParserImplTest {
     }
 
     @Test
-    public void transactionParserImpl_validParser_ok() {
+    public void parse_validParser_ok() {
         TransactionParserImpl transactionParserImpl = new TransactionParserImpl();
         Assertions.assertDoesNotThrow(() -> transactionParserImpl.parse("b,apple,200"));
         FruitTransaction transaction = transactionParserImpl.parse("b,apple,200");

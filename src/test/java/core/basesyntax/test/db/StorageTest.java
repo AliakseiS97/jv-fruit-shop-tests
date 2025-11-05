@@ -72,6 +72,12 @@ public class StorageTest {
         Assertions.assertEquals(2, copy.get("apple"));
     }
 
+    @Test
+    public void put_valueIsZero_ok() {
+        storage.put("apple", 0);
+        Assertions.assertEquals(0, storage.get("apple"));
+    }
+
     @AfterEach
     public void tearDown() {
         storage = null;

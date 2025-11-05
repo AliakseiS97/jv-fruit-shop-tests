@@ -1,16 +1,14 @@
 package core.basesyntax.test.service.impl;
 
-import core.basesyntax.db.Storage;
 import core.basesyntax.service.impl.WriterServiceImpl;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class WriterServiceImplTest {
 
@@ -26,7 +24,7 @@ public class WriterServiceImplTest {
     }
 
     @Test
-    public void write_storageIsNull_ok() {
+    public void write_storageIsNull_nok() {
         WriterServiceImpl writerService = new WriterServiceImpl();
         NullPointerException exception =
                 Assertions.assertThrows(NullPointerException.class,

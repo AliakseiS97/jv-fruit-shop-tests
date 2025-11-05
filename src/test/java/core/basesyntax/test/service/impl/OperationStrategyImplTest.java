@@ -3,10 +3,10 @@ package core.basesyntax.test.service.impl;
 import core.basesyntax.model.FruitTransaction;
 import core.basesyntax.service.impl.OperationStrategyImpl;
 import core.basesyntax.service.strategy.OperationHandler;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 import java.util.HashMap;
 import java.util.Map;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class OperationStrategyImplTest {
 
@@ -32,8 +32,8 @@ public class OperationStrategyImplTest {
         Map<FruitTransaction.Operation, OperationHandler> map = new HashMap<>();
         OperationStrategyImpl operationStrategy = new OperationStrategyImpl(map);
         IllegalArgumentException exception =
-        Assertions.assertThrows(IllegalArgumentException.class,
-                () -> operationStrategy.getHandler(null));
+                Assertions.assertThrows(IllegalArgumentException.class,
+                        () -> operationStrategy.getHandler(null));
         Assertions.assertEquals("operation is null", exception.getMessage());
     }
 
@@ -43,7 +43,8 @@ public class OperationStrategyImplTest {
         Map<FruitTransaction.Operation, OperationHandler> map =
                 Map.of(FruitTransaction.Operation.SUPPLY, handler);
         OperationStrategyImpl operationStrategy = new OperationStrategyImpl(map);
-        Assertions.assertEquals(handler, operationStrategy.getHandler(FruitTransaction.Operation.SUPPLY));
+        Assertions.assertEquals(handler,
+                operationStrategy.getHandler(FruitTransaction.Operation.SUPPLY));
     }
 
     @Test
@@ -64,16 +65,17 @@ public class OperationStrategyImplTest {
         Map<FruitTransaction.Operation, OperationHandler> map =
                 Map.of(FruitTransaction.Operation.SUPPLY, handler);
         OperationStrategyImpl operationStrategy = new OperationStrategyImpl(map);
-        Assertions.assertEquals(handler, operationStrategy.getHandler(FruitTransaction.Operation.SUPPLY));
+        Assertions.assertEquals(handler,
+                operationStrategy.getHandler(FruitTransaction.Operation.SUPPLY));
     }
 
     @Test
-    public void getMap_mapIsUnmodifiable_ok() {
+    public void getMap_mapIsUnmodifiable_nok() {
         Map<FruitTransaction.Operation, OperationHandler> map = new HashMap<>();
         OperationStrategyImpl operationStrategy = new OperationStrategyImpl(map);
         Map<FruitTransaction.Operation, OperationHandler> coppyOfmap = operationStrategy.getMap();
         Assertions.assertThrows(UnsupportedOperationException.class,
                 () -> coppyOfmap.put(FruitTransaction.Operation.BALANCE,
-                        (Storage, FruitTransaction) ->{}));
+                        (storage, fruitTransaction) -> {}));
     }
 }

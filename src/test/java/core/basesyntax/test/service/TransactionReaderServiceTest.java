@@ -2,15 +2,14 @@ package core.basesyntax.test.service;
 
 import core.basesyntax.service.ReaderService;
 import core.basesyntax.service.TransactionReaderService;
+import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import java.util.List;
 
 public class TransactionReaderServiceTest {
 
     @Test
-    public void TransactionReaderService_readerServiceIsNull_nok() {
+    public void transactionReaderService_readerServiceIsNull_nok() {
         NullPointerException exception =
                 Assertions.assertThrows(NullPointerException.class,
                         () -> new TransactionReaderService(null));
@@ -18,7 +17,7 @@ public class TransactionReaderServiceTest {
     }
 
     @Test
-    public void TransactionReaderService_readerServiceIsValid_ok() {
+    public void transactionReaderService_readerServiceIsValid_ok() {
         ReaderService readerService = path -> List.of("b,apple,235");
         TransactionReaderService service =
                 new TransactionReaderService(readerService);

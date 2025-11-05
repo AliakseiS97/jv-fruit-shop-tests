@@ -6,16 +6,16 @@ import core.basesyntax.model.FruitTransaction;
 public class PurchaseHandler implements OperationHandler {
     public void apply(Storage storage, FruitTransaction transaction) {
         if (storage == null) {
-            throw new NullPointerException("storage is null");
+            throw new NullPointerException("Storage is null");
         }
         if (transaction == null) {
-            throw new NullPointerException("transaction is null");
+            throw new NullPointerException("Transaction is null");
         }
         int newQuantity = storage.get(transaction.getFruit()) - transaction.getQuantity();
         if (newQuantity < 0) {
             throw new ArithmeticException("Not enough "
                     + transaction.getFruit()
-                    + "in the store."
+                    + " in the store."
                     + " Available: "
                     + storage.get(transaction.getFruit())
                     + ", requested: "
