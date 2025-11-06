@@ -8,7 +8,7 @@
       </pattern>
     </extension>
     <option name="PACKAGE_NAME" value="core.basesyntax.test.service.strategy" />
-    <option name="MAIN_CLASS_NAME" value="core.basesyntax.test.service.strategy.BalanceHandlerTest" />
+    <option name="MAIN_CLASS_NAME" value="strategy.service.core.basesyntax.BalanceHandlerTest" />
     <option name="METHOD_NAME" value="" />
     <option name="TEST_OBJECT" value="class" />
     <method v="2">

@@ -1,8 +1,7 @@
-package core.basesyntax.test.service.impl;
+package core.basesyntax.service.impl;
 
 import core.basesyntax.db.Storage;
 import core.basesyntax.model.FruitTransaction;
-import core.basesyntax.service.impl.ShopServiceImpl;
 import core.basesyntax.service.strategy.OperationStrategy;
 import java.util.ArrayList;
 import java.util.List;

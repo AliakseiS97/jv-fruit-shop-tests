@@ -1,6 +1,5 @@
-package core.basesyntax.test.service.impl;
+package core.basesyntax.service.impl;
 
-import core.basesyntax.service.impl.WriterServiceImpl;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;

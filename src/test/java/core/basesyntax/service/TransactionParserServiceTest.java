@@ -1,8 +1,6 @@
-package core.basesyntax.test.service;
+package core.basesyntax.service;
 
 import core.basesyntax.model.FruitTransaction;
-import core.basesyntax.service.TransactionParser;
-import core.basesyntax.service.TransactionParserService;
 import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

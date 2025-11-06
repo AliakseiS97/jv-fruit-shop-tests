@@ -1,7 +1,5 @@
-package core.basesyntax.test.service;
+package core.basesyntax.service;
 
-import core.basesyntax.service.ReaderService;
-import core.basesyntax.service.TransactionReaderService;
 import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

@@ -1,8 +1,7 @@
-package core.basesyntax.test.service.strategy;
+package core.basesyntax.service.strategy;
 
 import core.basesyntax.db.Storage;
 import core.basesyntax.model.FruitTransaction;
-import core.basesyntax.service.strategy.PurchaseHandler;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

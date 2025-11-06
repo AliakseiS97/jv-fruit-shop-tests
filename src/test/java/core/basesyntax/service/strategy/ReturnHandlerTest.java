@@ -1,20 +1,19 @@
-package core.basesyntax.test.service.strategy;
+package core.basesyntax.service.strategy;
 
 import core.basesyntax.db.Storage;
 import core.basesyntax.model.FruitTransaction;
-import core.basesyntax.service.strategy.SupplyHandler;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class SupplyHandlerTest {
-    private SupplyHandler handler;
+public class ReturnHandlerTest {
+    private ReturnHandler handler;
     private Storage storage;
 
     @BeforeEach
     public void setUp() {
         storage = new Storage();
-        handler = new SupplyHandler();
+        handler = new ReturnHandler();
     }
 
     @Test
@@ -35,7 +34,7 @@ public class SupplyHandlerTest {
     }
 
     @Test
-    public void apply_increasesQuantityAfterSupply_ok() {
+    public void apply_addsReturnedQuantityToStorage_ok() {
         FruitTransaction transaction = new FruitTransaction();
         transaction.setFruit("apple");
         transaction.setQuantity(300);
@@ -44,16 +43,5 @@ public class SupplyHandlerTest {
         Assertions.assertDoesNotThrow(() -> handler.apply(storage, transaction));
         Assertions.assertEquals(500, storage.get("apple"));
         Assertions.assertEquals(1000, storage.get("banana"));
-    }
-
-    @Test
-    public void apply_addsFruitDoesNotExist_ok() {
-        FruitTransaction transaction = new FruitTransaction();
-        transaction.setFruit("apple");
-        transaction.setQuantity(300);
-        storage.put("banana", 1000);
-        Assertions.assertDoesNotThrow(() -> handler.apply(storage, transaction));
-        Assertions.assertEquals(1000, storage.get("banana"));
-        Assertions.assertEquals(300, storage.get("apple"));
     }
 }

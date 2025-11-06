@@ -1,6 +1,5 @@
-package core.basesyntax.test.db;
+package core.basesyntax.db;
 
-import core.basesyntax.db.Storage;
 import java.util.Map;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;

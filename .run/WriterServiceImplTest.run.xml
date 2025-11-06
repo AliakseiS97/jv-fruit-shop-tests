@@ -8,7 +8,7 @@
       </pattern>
     </extension>
     <option name="PACKAGE_NAME" value="core.basesyntax.test.service.impl" />
-    <option name="MAIN_CLASS_NAME" value="core.basesyntax.test.service.impl.WriterServiceImplTest" />
+    <option name="MAIN_CLASS_NAME" value="impl.service.core.basesyntax.WriterServiceImplTest" />
     <option name="METHOD_NAME" value="" />
     <option name="TEST_OBJECT" value="class" />
     <method v="2">

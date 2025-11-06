@@ -1,11 +1,10 @@
-package core.basesyntax.test.model;
+package core.basesyntax.model;
 
 import static core.basesyntax.model.FruitTransaction.Operation.BALANCE;
 import static core.basesyntax.model.FruitTransaction.Operation.PURCHASE;
 import static core.basesyntax.model.FruitTransaction.Operation.RETURN;
 import static core.basesyntax.model.FruitTransaction.Operation.SUPPLY;
 
-import core.basesyntax.model.FruitTransaction;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
